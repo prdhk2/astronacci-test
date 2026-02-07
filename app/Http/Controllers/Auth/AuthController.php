@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function login(Request $request)
-    {
+    public function login(Request $request) {
         $user = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -32,8 +31,7 @@ class AuthController extends Controller
             ->onlyInput('email');
     }
 
-    public function register(Request $request)
-    {
+    public function register(Request $request) {
         $user = $request->validate([
             'name' => 'required|string|max:128',
             'email' => 'required|email|unique:users,email',
